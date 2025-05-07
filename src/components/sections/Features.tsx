@@ -27,16 +27,16 @@ export function Features() {
         {/* First arrow - from List Your Requirements to Material Matching */}
         <div className="absolute left-[240px] top-[100px] hidden md:block">
           <svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 10 Q 90 80, 170 10" stroke="#81C784" strokeWidth="2" fill="none" />
-            <path d="M170 10 L 165 15 M 170 10 L 165 5" stroke="#81C784" strokeWidth="2" />
+            <path d="M10 10 Q 90 0, 170 10" stroke="#81C784" strokeWidth="2" fill="none" />
+            <path d="M170 10 L 165 5 M 170 10 L 165 15" stroke="#81C784" strokeWidth="2" />
           </svg>
         </div>
         
         {/* Second arrow - from Material Matching to Connect The Best Deal */}
         <div className="absolute right-[240px] top-[100px] hidden md:block">
           <svg width="180" height="80" viewBox="0 0 180 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 10 Q 90 80, 170 10" stroke="#81C784" strokeWidth="2" fill="none" />
-            <path d="M170 10 L 165 15 M 170 10 L 165 5" stroke="#81C784" strokeWidth="2" />
+            <path d="M10 10 Q 90 0, 170 10" stroke="#81C784" strokeWidth="2" fill="none" />
+            <path d="M170 10 L 165 5 M 170 10 L 165 15" stroke="#81C784" strokeWidth="2" />
           </svg>
         </div>
       </div>
