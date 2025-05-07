@@ -1,8 +1,15 @@
 
 import * as React from "react"
-import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom"
+import { Button } from "@/components/ui/Button"
 
 export function Hero() {
+  const navigate = useNavigate()
+  
+  const handleStartMatchmaking = () => {
+    navigate('/welcome')
+  }
+  
   return (
     <>
       <div className="flex w-[989px] max-w-full flex-col items-center text-[#39302D] font-normal text-center mt-[60px] px-[19px] max-md:mt-10">
@@ -23,7 +30,7 @@ export function Hero() {
           companies and turn recycled plastic into collaboration ideas. We
           make recycled plastic sourcing smarter, simpler, and more valuable.
         </p>
-        <Button className="mt-[26px]">
+        <Button className="mt-[26px]" onClick={handleStartMatchmaking}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true"
             className="w-5 h-5 object-contain"
