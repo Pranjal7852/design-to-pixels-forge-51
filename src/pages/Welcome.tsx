@@ -4,8 +4,9 @@ import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
+import { CircleFadingPlus } from "lucide-react"
 
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/Button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import {
@@ -35,6 +36,10 @@ type FormValues = z.infer<typeof formSchema>
 
 export default function Welcome() {
   const navigate = useNavigate()
+  const [isLoading, setIsLoading] = React.useState(false)
+  const [loadingStep, setLoadingStep] = React.useState(0)
+  const loadingSteps = ["Spinning drives...", "Curating list...", "Designing posters..."]
+  
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -46,10 +51,30 @@ export default function Welcome() {
     },
   })
 
+  React.useEffect(() => {
+    if (isLoading) {
+      const interval = setInterval(() => {
+        setLoadingStep((prev) => {
+          if (prev < loadingSteps.length - 1) {
+            return prev + 1
+          }
+          
+          // When we reach the last step, navigate to results after a short delay
+          setTimeout(() => {
+            navigate("/results")
+          }, 800)
+          
+          return prev
+        })
+      }, 1200)
+      
+      return () => clearInterval(interval)
+    }
+  }, [isLoading, navigate])
+
   function onSubmit(data: FormValues) {
     console.log(data)
-    // We'll handle navigation to the next screen in a future implementation
-    // For now, just log the data
+    setIsLoading(true)
   }
 
   const plasticTypes = [
@@ -61,6 +86,18 @@ export default function Welcome() {
     "Polystyrene (PS)",
     "Other Plastics",
   ]
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12">
+        <div className="text-center">
+          <CircleFadingPlus className="animate-spin h-16 w-16 text-[#81C784] mx-auto mb-4" />
+          <h2 className="text-2xl font-medium text-[#39302D] mb-2">Processing your data</h2>
+          <p className="text-[#39302D] text-lg">{loadingSteps[loadingStep]}</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-12">
