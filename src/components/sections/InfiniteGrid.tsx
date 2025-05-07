@@ -4,110 +4,155 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
+  CarouselNext,
+  CarouselPrevious
 } from "@/components/ui/carousel"
+import { cn } from "@/lib/utils"
+import Autoplay from 'embla-carousel-autoplay'
 
-interface GridImage {
+interface PartnershipImage {
   src: string;
   alt: string;
+  title: string;
+  description: string;
 }
 
-const topRowImages: GridImage[] = [
+const partnershipImages: PartnershipImage[] = [
   {
-    src: "/lovable-uploads/018592c4-63a0-43a7-9c0f-5f6e66692c2d.png", 
-    alt: "BMW Partnerships Grid"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × POLAROID",
+    title: "BMW × POLAROID",
+    description: "Capture the drive."
   },
   {
-    src: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 1"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW Chair",
+    title: "BMW",
+    description: "Performance. Precision. Comfort."
   },
   {
-    src: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 2"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × IKEA",
+    title: "BMW × IKEA",
+    description: "Born in a BMW. Designed for your home."
   },
   {
-    src: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 3"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × TUPPERWARE",
+    title: "BMW × TUPPERWARE",
+    description: "Engineered for precision. Designed for freshness."
   },
   {
-    src: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 4"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × TOYS",
+    title: "BMW × TOYS",
+    description: "Playful design for creative minds."
   },
   {
-    src: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 5"
-  }
-];
-
-const bottomRowImages: GridImage[] = [
-  {
-    src: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 6"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × LEGO",
+    title: "BMW × LEGO",
+    description: "Upcycled engineering for little engineers"
   },
   {
-    src: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 7"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW DECATHLON",
+    title: "BMW DECATHLON",
+    description: "Hybrid performance on any terrain."
   },
   {
-    src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 8"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × SAMSONITE",
+    title: "BMW × SAMSONITE",
+    description: "Performance on the road. Protection for travel."
   },
   {
-    src: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 9"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW INTERIORS",
+    title: "BUILT FROM BMW INTERIORS",
+    description: "MADE FOR MODERN SPACES."
   },
   {
-    src: "https://images.unsplash.com/photo-1581090464777-f3220bbe1b8b?auto=format&fit=crop&w=300&h=200",
-    alt: "Tech image 10"
-  },
-  {
-    src: "/lovable-uploads/018592c4-63a0-43a7-9c0f-5f6e66692c2d.png", 
-    alt: "BMW Partnerships Grid"
+    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    alt: "BMW × PLANT POTS",
+    title: "BMW × GREEN LIVING",
+    description: "Sustainable design for eco-conscious lifestyles."
   }
 ];
 
 export function InfiniteGrid() {
-  // Create double sets of images for seamless infinite loop effect
-  const topImagesDouble = [...topRowImages, ...topRowImages];
-  const bottomImagesDouble = [...bottomRowImages, ...bottomRowImages];
+  const plugin = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false })
+  );
   
+  const pluginReverse = React.useRef(
+    Autoplay({ delay: 2000, stopOnInteraction: false, direction: 'backward' })
+  );
+
   return (
-    <div className="w-full py-12 overflow-hidden bg-[#F0F0F0]">
-      <h2 className="text-3xl font-bold text-center mb-8 text-[#39302D]">
-        Our Partnerships
-      </h2>
-      
-      {/* Top row - scrolling left */}
-      <div className="mb-8 relative">
-        <div className="animate-scroll-left overflow-hidden">
-          <div className="flex whitespace-nowrap">
-            {topImagesDouble.map((image, index) => (
-              <div key={index} className="inline-block px-2 w-[250px] h-[200px]">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover rounded-md"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+    <div className="w-full py-12 overflow-hidden bg-white">
+      <div className="container">
+        <h2 className="text-3xl font-bold text-center mb-8 text-[#39302D]">
+          Our Partnerships
+        </h2>
       </div>
       
-      {/* Bottom row - scrolling right */}
-      <div className="relative">
-        <div className="animate-scroll-right overflow-hidden">
-          <div className="flex whitespace-nowrap">
-            {bottomImagesDouble.map((image, index) => (
-              <div key={index} className="inline-block px-2 w-[250px] h-[200px]">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover rounded-md"
-                />
-              </div>
+      {/* First row - scrolling left */}
+      <div className="mb-8">
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          plugins={[plugin.current]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-1">
+            {partnershipImages.slice(0, 5).map((image, index) => (
+              <CarouselItem key={index} className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                <div className="p-1 h-full">
+                  <div className="relative h-[240px] w-full overflow-hidden rounded-lg bg-[#f1f5f9]">
+                    <img
+                      src={image.src.split("?")[0]}
+                      alt={image.alt}
+                      className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                      <h3 className="font-bold">{image.title}</h3>
+                      <p className="text-sm">{image.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
             ))}
-          </div>
-        </div>
+          </CarouselContent>
+        </Carousel>
+      </div>
+      
+      {/* Second row - scrolling right */}
+      <div>
+        <Carousel
+          opts={{ align: "start", loop: true }}
+          plugins={[pluginReverse.current]}
+          className="w-full"
+        >
+          <CarouselContent className="-ml-1">
+            {partnershipImages.slice(5, 10).map((image, index) => (
+              <CarouselItem key={index} className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                <div className="p-1 h-full">
+                  <div className="relative h-[240px] w-full overflow-hidden rounded-lg bg-[#f1f5f9]">
+                    <img
+                      src={image.src.split("?")[0]}
+                      alt={image.alt}
+                      className="object-cover w-full h-full"
+                    />
+                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
+                      <h3 className="font-bold">{image.title}</h3>
+                      <p className="text-sm">{image.description}</p>
+                    </div>
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+        </Carousel>
       </div>
     </div>
   )
