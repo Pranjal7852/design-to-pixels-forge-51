@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/Button"
 export default function Results() {
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-8">
-      <div className="text-[#81C784] text-lg font-semibold mb-2">AUTOCYCLE</div>
-      
       <div className="w-full max-w-[800px]">
+        <div className="text-[#81C784] text-lg font-semibold mb-2 text-left">AUTOCYCLE</div>
+        
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-3xl font-bold text-[#39302D]">Stella McCartney</h1>
           <span className="bg-[#E8F5E9] text-[#81C784] px-3 py-1 rounded text-sm">Best Match</span>
@@ -15,13 +15,10 @@ export default function Results() {
         
         {/* Main product image and description */}
         <div className="bg-[#74796a] p-4 mb-6 text-center">
-          <div className="text-[#D9CDB8] text-4xl font-bold mb-2">BMW</div>
-          <div className="text-[#D9CDB8] text-4xl font-bold mb-2">STELLA McCARTNEY</div>
-          <div className="text-[#D9CDB8] text-2xl mb-6">Eco Luxe Handbag</div>
           <img 
-            src="/lovable-uploads/4a6e0bdf-5c7f-451b-b5c7-649b4887edaa.png"
+            src="/lovable-uploads/ef444d4e-123f-444c-a95e-cbf61e1956d4.png"
             alt="BMW Stella McCartney Eco Luxe Handbag" 
-            className="mx-auto mb-4 max-w-full h-auto"
+            className="mx-auto w-full h-auto"
           />
         </div>
         
