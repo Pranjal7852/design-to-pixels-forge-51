@@ -132,23 +132,25 @@ export default function Welcome() {
                 control={form.control}
                 name="plasticType"
                 render={({ field }) => (
-                  <FormItem className="h-full flex flex-col">
-                    <FormLabel className="text-lg font-medium text-[#39302D]">What type of plastic waste do you have?</FormLabel>
-                    <Select 
-                      onValueChange={field.onChange} 
-                      defaultValue={field.value}
-                    >
-                      <FormControl>
-                        <SelectTrigger className="h-14 text-base border-gray-300 mt-auto">
-                          <SelectValue placeholder="Select plastic type" />
-                        </SelectTrigger>
-                      </FormControl>
-                      <SelectContent>
-                        {plasticTypes.map((type) => (
-                          <SelectItem key={type} value={type}>{type}</SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
+                  <FormItem className="flex flex-col h-[120px]">
+                    <FormLabel className="text-lg font-medium text-[#39302D] mb-2">What type of plastic waste do you have?</FormLabel>
+                    <div className="flex-grow flex flex-col justify-end">
+                      <Select 
+                        onValueChange={field.onChange} 
+                        defaultValue={field.value}
+                      >
+                        <FormControl>
+                          <SelectTrigger className="h-14 text-base border-gray-300">
+                            <SelectValue placeholder="Select plastic type" />
+                          </SelectTrigger>
+                        </FormControl>
+                        <SelectContent>
+                          {plasticTypes.map((type) => (
+                            <SelectItem key={type} value={type}>{type}</SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
+                    </div>
                   </FormItem>
                 )}
               />
@@ -157,15 +159,17 @@ export default function Welcome() {
                 control={form.control}
                 name="location"
                 render={({ field }) => (
-                  <FormItem className="h-full flex flex-col">
-                    <FormLabel className="text-lg font-medium text-[#39302D]">Where is your plastic located?</FormLabel>
-                    <FormControl>
-                      <Input 
-                        placeholder="City and country (e.g., München, Germany)" 
-                        className="h-14 text-base border-gray-300 mt-auto" 
-                        {...field} 
-                      />
-                    </FormControl>
+                  <FormItem className="flex flex-col h-[120px]">
+                    <FormLabel className="text-lg font-medium text-[#39302D] mb-2">Where is your plastic located?</FormLabel>
+                    <div className="flex-grow flex flex-col justify-end">
+                      <FormControl>
+                        <Input 
+                          placeholder="City and country (e.g., München, Germany)" 
+                          className="h-14 text-base border-gray-300" 
+                          {...field} 
+                        />
+                      </FormControl>
+                    </div>
                   </FormItem>
                 )}
               />
