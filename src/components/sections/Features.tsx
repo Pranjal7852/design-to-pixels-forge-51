@@ -3,8 +3,8 @@ import * as React from "react"
 
 const features = [
   "List Your Requirements",
-  "See Matching Results",
-  "Connect to the Company"
+  "Material Matching",
+  "Connect The Best Deal"
 ]
 
 export function Features() {
@@ -15,19 +15,12 @@ export function Features() {
       </h2>
 
       <div className="relative w-full max-w-[960px] mt-14">
-        <div className="flex justify-between items-center px-4 relative z-10">
-          {features.map((feature, index) => (
-            <div key={index} className="text-center text-[22px] font-semibold text-[#39302D] w-1/3">
-              {feature}
-            </div>
-          ))}
-        </div>
-
-        {/* Arrow from List Your Requirements to See Matching Results */}
-       
-
-        {/* Arrow from See Matching Results to Connect to the Company */}
-  
+        {/* Use the uploaded image instead of building the component with individual elements */}
+        <img 
+          src="/lovable-uploads/8eaaf284-31cd-4b75-8c77-285971a6433a.png" 
+          alt="From Waste to Value Process"
+          className="w-full h-auto"
+        />
       </div>
     </div>
   )
