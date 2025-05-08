@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -14,8 +15,8 @@ export default function Results() {
         {/* Main product image and description */}
         <div className="bg-[#74796a] p-4 mb-6 text-center">
           <img 
-            src="/lovable-uploads/ef444d4e-123f-444c-a95e-cbf61e1956d4.png"
-            alt="BMW Stella McCartney Eco Luxe Handbag" 
+            src="/lovable-uploads/023c718a-f851-4d36-b599-5d0715917471.png"
+            alt="BMW × IKEA Furniture" 
             className="mx-auto w-full h-auto"
           />
         </div>
