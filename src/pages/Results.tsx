@@ -8,7 +8,7 @@ export default function Results() {
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-8 pt-32">
       <div className="w-full max-w-[800px]">
         <div className="flex justify-between items-center mb-4">
-          <h1 className="text-3xl font-bold text-[#39302D]">Stella McCartney</h1>
+          <h1 className="text-3xl font-bold text-[#39302D]">IKEA</h1>
           <span className="bg-[#E8F5E9] text-[#81C784] px-3 py-1 rounded text-sm">Best Match</span>
         </div>
         
@@ -36,27 +36,27 @@ export default function Results() {
           </div>
           
           <p className="text-[#39302D] mb-4">
-            This stylish handbag is crafted from upcycled BMW PCABS, merging high fashion with sustainable luxury. Each bag features a unique design, influenced by BMW's sleek aesthetics, while promoting the circular economy. Using state-of-the-art techniques, this collaboration retains the robustness of PCABS, ensuring longevity and durability. This product aligns with modern consumer trends for environmentally responsible luxury items and will be marketed through exclusive pop-up events and collaborations in high-end retail spaces.
+            The BODARP Eco Cupboard is an extension of IKEA's BODARP line, featuring doors made from recycled wood covered with plastic foil made from recycled PET bottles. With its matte grey-green finish, it offers a modern aesthetic while promoting sustainable living. Designed for durability and style, it serves as a testament to IKEA's commitment to circular design.
           </p>
           
           <div className="mb-4">
             <h3 className="text-[#FF8A65] font-medium mb-2">Market Opportunity</h3>
             <p className="text-[#39302D]">
-              There is a growing market for sustainable luxury items; luxury handbag sales reached $62 billion in 2023, with a significant portion attributed to eco-friendly products.
+              Appeals to environmentally conscious homeowners seeking stylish, sustainable furniture options at an affordable price point.
             </p>
           </div>
           
           <div className="mb-4">
             <h3 className="text-[#81C784] font-medium mb-2">Sustainability Impact</h3>
             <p className="text-[#39302D]">
-              By utilizing recycled materials, this collaboration reduces landfill waste and carbon footprint, embodying both brands' commitment to sustainability. Similar products include Stella's 'Leathers from the Future' collection, focusing on ecological integrity.
+              Continues IKEA's tradition of combining form, function, and sustainability, providing consumers with eco-friendly home solutions.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">Website</h4>
-              <a href="https://www.companyname.com/" className="text-[#39302D] break-all">https://www.companyname.com/</a>
+              <a href="https://www.companyname.com/" className="text-[#39302D] break-all">https://www.ikea.lv/en/products/bodarp-door-grey-green-art-00435535/</a>
             </div>
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">e-mail</h4>
