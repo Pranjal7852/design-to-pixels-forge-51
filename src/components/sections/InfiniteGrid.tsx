@@ -13,7 +13,7 @@ export function InfiniteGrid() {
   );
   
   const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, direction: "reverse" })
+    Autoplay({ delay: 2000, stopOnInteraction: false, reverse: true })
   );
 
   // Images for the first row
@@ -37,9 +37,9 @@ export function InfiniteGrid() {
   ];
 
   return (
-    <div className="w-full overflow-hidden bg-white">
+    <div className="w-full overflow-hidden bg-white py-4">
       {/* First row - scrolling left */}
-      <div>
+      <div className="mb-4">
         <Carousel
           opts={{ align: "start", loop: true }}
           plugins={[plugin.current]}
@@ -48,7 +48,7 @@ export function InfiniteGrid() {
           <CarouselContent className="-ml-0">
             {firstRowImages.map((image, index) => (
               <CarouselItem key={index} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-0 h-full">
+                <div className="p-1 h-full">
                   <div className="relative h-[240px] w-full overflow-hidden">
                     <img
                       src={image}
@@ -73,7 +73,7 @@ export function InfiniteGrid() {
           <CarouselContent className="-ml-0">
             {secondRowImages.map((image, index) => (
               <CarouselItem key={index} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-0 h-full">
+                <div className="p-1 h-full">
                   <div className="relative h-[240px] w-full overflow-hidden">
                     <img
                       src={image}
