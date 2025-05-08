@@ -1,23 +1,9 @@
 
 import * as React from "react"
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-} from "@/components/ui/carousel"
-import Autoplay from 'embla-carousel-autoplay'
+import { LeftScrollCarousel } from "@/components/ui/custom-carousel/left-scroll-carousel"
+import { RightScrollCarousel } from "@/components/ui/custom-carousel/right-scroll-carousel"
 
 export function InfiniteGrid() {
-  // First row plugin - moving left (default direction)
-  const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
-  );
-  
-  // Second row plugin - moving right
-  const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false })
-  );
-
   // Images for the first row
   const firstRowImages = [
     "/lovable-uploads/4ff0810f-ba0a-4947-a515-5eb8341c06b0.png",
@@ -56,63 +42,12 @@ export function InfiniteGrid() {
     <div className="w-full overflow-hidden bg-white py-4">
       {/* First row - scrolling left */}
       <div className="mb-8">
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-            dragFree: true,
-            containScroll: false,
-          }}
-          plugins={[plugin.current]}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-0">
-            {firstRowImages.map((image, index) => (
-              <CarouselItem key={`row1-${index}`} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-1 h-full">
-                  <div className="relative h-[240px] w-full overflow-hidden">
-                    <img
-                      src={image}
-                      alt={`Partnership ${index + 1}`}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        <LeftScrollCarousel images={firstRowImages} />
       </div>
       
       {/* Second row - scrolling right */}
       <div>
-        <Carousel
-          opts={{ 
-            align: "start", 
-            loop: true,
-            dragFree: true,
-            direction: "rtl",
-            containScroll: false,
-          }}
-          plugins={[pluginReverse.current]}
-          className="w-full"
-        >
-          <CarouselContent className="-ml-0">
-            {secondRowImages.map((image, index) => (
-              <CarouselItem key={`row2-${index}`} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-1 h-full">
-                  <div className="relative h-[240px] w-full overflow-hidden">
-                    <img
-                      src={image}
-                      alt={`Partnership ${index + 6}`}
-                      className="object-cover w-full h-full"
-                    />
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-        </Carousel>
+        <RightScrollCarousel images={secondRowImages} />
       </div>
     </div>
   )
