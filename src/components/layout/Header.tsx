@@ -18,10 +18,18 @@ export function Header() {
         </div>
       </div>
       <nav className="self-center z-10 flex text-[15px] font-medium text-center capitalize tracking-[0.11px] leading-none bg-[#EBEFEB] -mt-16">
-        <NavigationItem as={Link} to="/" active={window.location.pathname === "/"}>Home</NavigationItem>
-        <NavigationItem as={Link} to="/welcome" active={window.location.pathname === "/welcome"}>Get Started</NavigationItem>
-        <NavigationItem as={Link} to="/#faq" active={false}>FAQ</NavigationItem>
-        <NavigationItem as={Link} to="/#about" active={false}>About us</NavigationItem>
+        <NavigationItem active={window.location.pathname === "/"}>
+          <Link to="/">Home</Link>
+        </NavigationItem>
+        <NavigationItem active={window.location.pathname === "/welcome"}>
+          <Link to="/welcome">Get Started</Link>
+        </NavigationItem>
+        <NavigationItem active={false}>
+          <Link to="/#faq">FAQ</Link>
+        </NavigationItem>
+        <NavigationItem active={false}>
+          <Link to="/#about">About us</Link>
+        </NavigationItem>
       </nav>
     </div>
   )
