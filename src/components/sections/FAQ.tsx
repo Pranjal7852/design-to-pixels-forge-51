@@ -9,19 +9,15 @@ import {
 const faqs = [
   {
     question: "What is AutoCycle?",
-    answer: "AutoCycle is a platform that connects recycled plastic sellers with potential buyers, facilitating sustainable partnerships."
+    answer: "Autocycle is a Munich-based platform that connects companies with hard-to-recycle plastic parts to brands that can transform them into unique, high-value products. By encouraging creative brand collaborations, Autocycle helps make recycling economically viable and environmentally impactful."
   },
   {
-    question: "What Kind of Materials Can Be Traded?",
-    answer: "We handle various types of recyclable plastics and materials suitable for industrial reuse."
+    question: "How does matchmaking work?",
+    answer: "Autocycle uses more than just material data to make matches. It considers the type and quantity of plastic, as well as the brand-identity, advertisement value of potential partner companies."
   },
   {
-    question: "How do you ensure Quality and Quantity over the supply chain?",
-    answer: "We implement strict quality control measures and verification processes throughout the supply chain."
-  },
-  {
-    question: "How do you support clients after project implementation?",
-    answer: "We provide ongoing support, monitoring, and optimization services to ensure successful partnerships."
+    question: "What is the next step after matchmaking?",
+    answer: "Once a match is made, the two companies collaborate directly to co-develop products, align marketing strategies, and bring the recycled product to market. This early-stage partnership helps overcome the economic challenges of plastic recycling."
   }
 ]
 
