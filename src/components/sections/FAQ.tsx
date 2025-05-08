@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import {
   Accordion,
@@ -25,18 +26,13 @@ export function FAQ() {
   return (
     <div className="w-[940px] max-w-full mt-[60px] max-md:mt-10">
       <div className="flex text-[#39302D] font-normal max-md:max-w-full">
-        <div className="min-w-60 w-[434px] max-md:max-w-full">
-          <h2 className="font-normal w-full text-[35px] leading-none max-md:max-w-full">
+        <div className="w-full max-md:max-w-full">
+          <h2 className="font-normal text-[35px] leading-none max-md:max-w-full">
             Frequently Asked Questions
           </h2>
-          <div className="font-normal w-full text-lg leading-none mt-[9px] max-md:max-w-full">
+          <div className="font-normal text-lg leading-none mt-[9px] max-md:max-w-full">
             Answers to common queries about AutoCycle.
           </div>
-        </div>
-        <div className="text-2xl text-center underline capitalize tracking-[0.08px] leading-none">
-          <a href="#contact" className="font-normal underline decoration-solid decoration-auto underline-offset-auto self-stretch min-w-[166px] pl-[52px] pr-[51px] py-[15px] rounded-[77px] max-md:px-5">
-            Get in Touch
-          </a>
         </div>
       </div>
       <div className="mt-[25px] pt-3 max-md:max-w-full">
