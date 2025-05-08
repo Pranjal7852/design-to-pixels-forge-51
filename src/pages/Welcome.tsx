@@ -92,24 +92,25 @@ export default function Welcome() {
     return (
       <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12 pt-32">
         <div className="text-center">
+          <h2 className="text-2xl font-medium text-[#39302D] mb-4">Processing your data</h2>
+          <p className="text-[#39302D] text-lg mb-6">{loadingSteps[loadingStep]}</p>
+          
           {!imageLoaded && (
             <CircleFadingPlus className="animate-spin h-16 w-16 text-[#81C784] mx-auto mb-4" />
           )}
-          <div className="relative mb-6">
+          <div className="relative">
             <img
               src="/lovable-uploads/6acdf04b-f51f-4fa6-b56c-2462b0ca4c1d.png"
               alt="BMW Collaborations"
-              className={`max-w-[800px] w-full h-auto ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              className={`max-w-[500px] w-full h-auto mx-auto ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
               onLoad={handleImageLoad}
             />
             {!imageLoaded && (
               <div className="absolute inset-0 flex items-center justify-center">
-                <Skeleton className="w-full h-full rounded-md" />
+                <Skeleton className="w-full h-[300px] rounded-md" />
               </div>
             )}
           </div>
-          <h2 className="text-2xl font-medium text-[#39302D] mb-2">Processing your data</h2>
-          <p className="text-[#39302D] text-lg">{loadingSteps[loadingStep]}</p>
         </div>
       </div>
     )
