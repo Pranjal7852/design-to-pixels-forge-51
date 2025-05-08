@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
@@ -94,21 +95,21 @@ export default function Welcome() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-12">
-      <h1 className="text-4xl text-[#81C784] font-normal mb-6">Welcome</h1>
-      
-      <div className="max-w-[800px] text-center mb-12">
-        <p className="text-lg text-[#39302D]">
-          We'll ask you 3 questions about your plastic to match it with potential buyers.
-        </p>
-        <p className="text-lg text-[#39302D]">
-          After seeing the preliminary results, you can choose to provide more data to improve the matches.
-        </p>
-      </div>
+    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12">
+      <div className="w-full max-w-[800px] flex flex-col items-center">
+        <h1 className="text-4xl text-[#81C784] font-normal mb-6">Welcome</h1>
+        
+        <div className="max-w-[800px] text-center mb-12">
+          <p className="text-lg text-[#39302D]">
+            We'll ask you 3 questions about your plastic to match it with potential buyers.
+          </p>
+          <p className="text-lg text-[#39302D]">
+            After seeing the preliminary results, you can choose to provide more data to improve the matches.
+          </p>
+        </div>
 
-      <div className="w-full max-w-[800px]">
         <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 w-full">
             <FormField
               control={form.control}
               name="companyName"
