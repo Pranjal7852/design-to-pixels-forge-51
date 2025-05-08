@@ -23,7 +23,7 @@ export default function Results() {
         
         {/* Product info */}
         <div className="mb-6">
-          <h2 className="text-2xl font-bold text-[#39302D] mb-2">Eco Luxe Handbag</h2>
+          <h2 className="text-2xl font-bold text-[#39302D] mb-2">BODARP Eco Cupboard</h2>
           
           <div className="flex justify-end mb-2">
             <button className="flex items-center text-[#81C784]">
@@ -49,7 +49,7 @@ export default function Results() {
           <div className="mb-4">
             <h3 className="text-[#81C784] font-medium mb-2">Sustainability Impact</h3>
             <p className="text-[#39302D]">
-              Continues IKEA's tradition of combining form, function, and sustainability, providing consumers with eco-friendly home solutions.
+              Reduces plastic waste by repurposing PET bottles into durable furniture components, supporting a circular economy.
             </p>
           </div>
           
