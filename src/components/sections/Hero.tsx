@@ -1,7 +1,7 @@
 
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
-import { Button } from "@/components/ui/Button"
+import { Button } from "@/components/ui/button"
 
 export function Hero() {
   const navigate = useNavigate()
@@ -19,18 +19,16 @@ export function Hero() {
           powerful brand partnerships
         </h1>
         <p className="text-2xl leading-9 self-stretch mt-[38px] max-md:max-w-full">
-          We{" "}
+          We give plastic a{" "}
           <span className="font-extrabold italic text-[#2A08E9]">
-            connect
+            second life
           </span>{" "}
-          sellers of recycled plastic with companies that can use it and{" "}
+          by turning it into{" "}
           <span className="font-extrabold italic text-[#FF8A65]">
-            match
-          </span>{" "}
-          companies and turn recycled plastic into collaboration ideas. We
-          make recycled plastic sourcing smarter, simpler, and more valuable.
+            unique products
+          </span>.
         </p>
-        <Button className="mt-[26px]" onClick={handleStartMatchmaking}>
+        <Button className="mt-[26px] bg-[#81C784]" onClick={handleStartMatchmaking}>
           <img
             src="https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true"
             className="w-5 h-5 object-contain"

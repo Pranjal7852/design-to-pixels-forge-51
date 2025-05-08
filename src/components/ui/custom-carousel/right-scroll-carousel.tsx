@@ -17,8 +17,7 @@ export function RightScrollCarousel({ images }: RightScrollCarouselProps) {
     Autoplay({ 
       delay: 2000, 
       stopOnInteraction: false, 
-      // Reverse the default direction for embla carousel
-      reverseDirection: true 
+      direction: 'rtl' // Use rtl direction for right-to-left scrolling
     })
   );
   
@@ -29,6 +28,7 @@ export function RightScrollCarousel({ images }: RightScrollCarouselProps) {
         loop: true,
         dragFree: true,
         containScroll: false,
+        direction: 'rtl' // Set the carousel direction to right-to-left
       }}
       plugins={[pluginReverse.current]}
       className="w-full"
