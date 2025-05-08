@@ -4,7 +4,6 @@ import { Header } from "@/components/layout/Header"
 import { Hero } from "@/components/sections/Hero"
 import { Features } from "@/components/sections/Features"
 import { FAQ } from "@/components/sections/FAQ"
-import { InfiniteGrid } from "@/components/sections/InfiniteGrid"
 
 export default function IndexPage() {
   return (
@@ -12,7 +11,6 @@ export default function IndexPage() {
       <main className="bg-[#F8F8F8] flex min-h-[1823px] flex-col overflow-hidden items-center max-md:max-w-full">
         <Header />
         <Hero />
-        <InfiniteGrid />
         <Features />
         <FAQ />
       </main>
