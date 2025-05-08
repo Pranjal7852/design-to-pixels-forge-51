@@ -4,81 +4,8 @@ import {
   Carousel,
   CarouselContent,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious
 } from "@/components/ui/carousel"
-import { cn } from "@/lib/utils"
 import Autoplay from 'embla-carousel-autoplay'
-
-interface PartnershipImage {
-  src: string;
-  alt: string;
-  title: string;
-  description: string;
-}
-
-const partnershipImages: PartnershipImage[] = [
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × POLAROID",
-    title: "BMW × POLAROID",
-    description: "Capture the drive."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW Chair",
-    title: "BMW",
-    description: "Performance. Precision. Comfort."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × IKEA",
-    title: "BMW × IKEA",
-    description: "Born in a BMW. Designed for your home."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × TUPPERWARE",
-    title: "BMW × TUPPERWARE",
-    description: "Engineered for precision. Designed for freshness."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × TOYS",
-    title: "BMW × TOYS",
-    description: "Playful design for creative minds."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × LEGO",
-    title: "BMW × LEGO",
-    description: "Upcycled engineering for little engineers"
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW DECATHLON",
-    title: "BMW DECATHLON",
-    description: "Hybrid performance on any terrain."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × SAMSONITE",
-    title: "BMW × SAMSONITE",
-    description: "Performance on the road. Protection for travel."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW INTERIORS",
-    title: "BUILT FROM BMW INTERIORS",
-    description: "MADE FOR MODERN SPACES."
-  },
-  {
-    src: "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
-    alt: "BMW × PLANT POTS",
-    title: "BMW × GREEN LIVING",
-    description: "Sustainable design for eco-conscious lifestyles."
-  }
-];
 
 export function InfiniteGrid() {
   const plugin = React.useRef(
@@ -86,8 +13,25 @@ export function InfiniteGrid() {
   );
   
   const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, direction: 'backward' })
+    Autoplay({ delay: 2000, stopOnInteraction: false, backwards: true })
   );
+
+  const firstRowImages = [
+    "/lovable-uploads/4ff0810f-ba0a-4947-a515-5eb8341c06b0.png",
+    "/lovable-uploads/1cb38006-ae2f-406e-89c1-b125cb532b3e.png",
+    "/lovable-uploads/1901c47e-79bb-4e60-b8ba-6e32e2cd868d.png",
+    "/lovable-uploads/3884cea5-006d-4ebb-83c7-b837b0775607.png",
+    "/lovable-uploads/00d1b357-c1c3-4b55-bc5a-74ffc24b742d.png",
+    "/lovable-uploads/81e2c5b0-4fd1-4974-8d2c-7428605e341c.png"
+  ];
+
+  const secondRowImages = [
+    "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png",
+    "/lovable-uploads/3f32afaf-38a7-450e-9fdc-3be4e011390c.png"
+  ];
 
   return (
     <div className="w-full py-12 overflow-hidden bg-white">
@@ -98,26 +42,22 @@ export function InfiniteGrid() {
       </div>
       
       {/* First row - scrolling left */}
-      <div className="mb-8">
+      <div className="mb-4">
         <Carousel
           opts={{ align: "start", loop: true }}
           plugins={[plugin.current]}
           className="w-full"
         >
-          <CarouselContent className="-ml-1">
-            {partnershipImages.slice(0, 5).map((image, index) => (
-              <CarouselItem key={index} className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-1 h-full">
-                  <div className="relative h-[240px] w-full overflow-hidden rounded-lg bg-[#f1f5f9]">
+          <CarouselContent className="-ml-0">
+            {firstRowImages.map((image, index) => (
+              <CarouselItem key={index} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                <div className="p-0 h-full">
+                  <div className="relative h-[240px] w-full overflow-hidden">
                     <img
-                      src={image.src.split("?")[0]}
-                      alt={image.alt}
+                      src={image}
+                      alt={`Partnership ${index + 1}`}
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-                      <h3 className="font-bold">{image.title}</h3>
-                      <p className="text-sm">{image.description}</p>
-                    </div>
                   </div>
                 </div>
               </CarouselItem>
@@ -133,20 +73,16 @@ export function InfiniteGrid() {
           plugins={[pluginReverse.current]}
           className="w-full"
         >
-          <CarouselContent className="-ml-1">
-            {partnershipImages.slice(5, 10).map((image, index) => (
-              <CarouselItem key={index} className="pl-1 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
-                <div className="p-1 h-full">
-                  <div className="relative h-[240px] w-full overflow-hidden rounded-lg bg-[#f1f5f9]">
+          <CarouselContent className="-ml-0">
+            {secondRowImages.map((image, index) => (
+              <CarouselItem key={index} className="pl-0 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">
+                <div className="p-0 h-full">
+                  <div className="relative h-[240px] w-full overflow-hidden">
                     <img
-                      src={image.src.split("?")[0]}
-                      alt={image.alt}
+                      src={image}
+                      alt={`Partnership ${index + 6}`}
                       className="object-cover w-full h-full"
                     />
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent p-4 text-white">
-                      <h3 className="font-bold">{image.title}</h3>
-                      <p className="text-sm">{image.description}</p>
-                    </div>
                   </div>
                 </div>
               </CarouselItem>
