@@ -6,11 +6,11 @@ import { NavigationItem } from "@/components/ui/Navigation"
 export function Header() {
   return (
     <div className="flex w-full flex-col items-stretch pb-[18px]">
-      <div className="bg-[#F6F6F6] flex flex-col items-center text-2xl text-[#81C784] font-bold whitespace-nowrap uppercase tracking-[1px] pt-6">
+      <div className="bg-[#F6F6F6] flex flex-col items-center text-2xl font-bold whitespace-nowrap uppercase tracking-[1px] pt-6">
         <div className="max-w-[1266px] w-full pl-[63px] pr-10 max-md:px-5">
           <div className="justify-center items-center flex min-h-[84px] w-full pr-[19px] py-5">
             <div className="self-stretch flex min-w-60 w-full flex-col justify-center flex-1 shrink basis-[0%] my-auto py-1">
-              <Link to="/" className="text-2xl font-bold leading-[36px]">
+              <Link to="/" className="text-2xl font-bold leading-[36px] text-[#81C784]">
                 AutoCycle
               </Link>
             </div>

@@ -1,3 +1,4 @@
+
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
@@ -94,16 +95,23 @@ export default function Welcome() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-12 pt-32">
-      <div className="w-full max-w-[600px] flex flex-col items-center">
-        <h1 className="text-4xl text-[#81C784] font-normal mb-6">Welcome</h1>
+    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-12">
+      <div className="w-full max-w-[600px] flex flex-col items-center mt-16">
+        {/* Circle avatar image */}
+        <div className="mb-6 relative">
+          <div className="w-16 h-16 rounded-full bg-[#3B82F6] flex items-center justify-center text-white text-2xl font-bold border-4 border-[#90CAF9] shadow-lg">
+            C
+          </div>
+        </div>
+        
+        <h1 className="text-4xl text-[#81C784] font-normal mb-4">Welcome</h1>
         
         <div className="w-full text-center mb-12">
           <p className="text-lg text-[#39302D]">
-            We'll ask you 3 questions about your plastic to match it with potential buyers.
+            Tell us a bit about your plastic waste.
           </p>
           <p className="text-lg text-[#39302D]">
-            After seeing the preliminary results, you can choose to provide more data to improve the matches.
+            We'll match you with brands that can turn it into something valuable.
           </p>
         </div>
 
@@ -118,7 +126,7 @@ export default function Welcome() {
                   <FormControl>
                     <Input 
                       placeholder="Company Name" 
-                      className="h-14 text-base" 
+                      className="h-14 text-base border-gray-300" 
                       {...field} 
                     />
                   </FormControl>
@@ -126,50 +134,57 @@ export default function Welcome() {
               )}
             />
 
-            <FormField
-              control={form.control}
-              name="plasticType"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-medium text-[#39302D]">What type of plastic waste do you have?</FormLabel>
-                  <Select 
-                    onValueChange={field.onChange} 
-                    defaultValue={field.value}
-                  >
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <FormField
+                control={form.control}
+                name="plasticType"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-medium text-[#39302D]">What type of plastic waste do you have?</FormLabel>
+                    <Select 
+                      onValueChange={field.onChange} 
+                      defaultValue={field.value}
+                    >
+                      <FormControl>
+                        <SelectTrigger className="h-14 text-base border-gray-300">
+                          <SelectValue placeholder="Select plastic type" />
+                        </SelectTrigger>
+                      </FormControl>
+                      <SelectContent>
+                        {plasticTypes.map((type) => (
+                          <SelectItem key={type} value={type}>{type}</SelectItem>
+                        ))}
+                      </SelectContent>
+                    </Select>
+                  </FormItem>
+                )}
+              />
+
+              <FormField
+                control={form.control}
+                name="location"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel className="text-lg font-medium text-[#39302D]">Where is your plastic located?</FormLabel>
                     <FormControl>
-                      <SelectTrigger className="h-14 text-base">
-                        <SelectValue placeholder="Select plastic type" />
-                      </SelectTrigger>
+                      <Input 
+                        placeholder="City and country (e.g., München, Germany)" 
+                        className="h-14 text-base border-gray-300" 
+                        {...field} 
+                      />
                     </FormControl>
-                    <SelectContent>
-                      {plasticTypes.map((type) => (
-                        <SelectItem key={type} value={type}>{type}</SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="location"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-medium text-[#39302D]">Where is your plastic located?</FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="City and country (e.g., München, Germany)" 
-                      className="h-14 text-base" 
-                      {...field} 
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
+                  </FormItem>
+                )}
+              />
+            </div>
 
             <div className="flex justify-center pt-4">
-              <Button type="submit" className="w-[180px]">Submit</Button>
+              <Button 
+                type="submit" 
+                className="w-[180px] h-14 bg-[#81C784] hover:bg-[#66BB6A] text-white"
+              >
+                Submit
+              </Button>
             </div>
           </form>
         </Form>
