@@ -14,7 +14,12 @@ interface RightScrollCarouselProps {
 export function RightScrollCarousel({ images }: RightScrollCarouselProps) {
   // Plugin for right scroll direction
   const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, direction: 'backward' })
+    Autoplay({ 
+      delay: 2000, 
+      stopOnInteraction: false, 
+      // Reverse the default direction for embla carousel
+      reverseDirection: true 
+    })
   );
   
   return (
