@@ -15,7 +15,7 @@ export default function Results() {
         {/* Main product image and description */}
         <div className="bg-[#74796a] p-4 mb-6 text-center">
           <img 
-            src="/lovable-uploads/023c718a-f851-4d36-b599-5d0715917471.png"
+            src="/lovable-uploads/95194fdc-7220-44c7-97cd-46be5d8982d6.png"
             alt="BMW × IKEA Furniture" 
             className="mx-auto w-full h-auto"
           />
