@@ -186,7 +186,7 @@ export default function Welcome() {
                     <div className="flex-grow flex flex-col justify-end">
                       <FormControl>
                         <Input 
-                          placeholder="City and country (e.g., München, Germany)" 
+                          placeholder="City (e.g., München)" 
                           className="h-14 text-base border-gray-300" 
                           {...field} 
                         />
