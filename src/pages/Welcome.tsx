@@ -22,6 +22,7 @@ import {
   FormItem,
   FormLabel,
 } from "@/components/ui/form"
+import { Skeleton } from "@/components/ui/skeleton"
 
 const formSchema = z.object({
   companyName: z.string().min(1, { message: "Company name is required" }),
@@ -36,6 +37,7 @@ export default function Welcome() {
   const [isLoading, setIsLoading] = React.useState(false)
   const [loadingStep, setLoadingStep] = React.useState(0)
   const loadingSteps = ["Spinning drives...", "Curating list...", "Designing posters..."]
+  const [imageLoaded, setImageLoaded] = React.useState(false)
   
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
@@ -82,11 +84,30 @@ export default function Welcome() {
     "Other Plastics",
   ]
 
+  const handleImageLoad = () => {
+    setImageLoaded(true)
+  }
+
   if (isLoading) {
     return (
       <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12 pt-32">
         <div className="text-center">
-          <CircleFadingPlus className="animate-spin h-16 w-16 text-[#81C784] mx-auto mb-4" />
+          {!imageLoaded && (
+            <CircleFadingPlus className="animate-spin h-16 w-16 text-[#81C784] mx-auto mb-4" />
+          )}
+          <div className="relative mb-6">
+            <img
+              src="/lovable-uploads/6acdf04b-f51f-4fa6-b56c-2462b0ca4c1d.png"
+              alt="BMW Collaborations"
+              className={`max-w-[800px] w-full h-auto ${imageLoaded ? 'opacity-100' : 'opacity-0'}`}
+              onLoad={handleImageLoad}
+            />
+            {!imageLoaded && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <Skeleton className="w-full h-full rounded-md" />
+              </div>
+            )}
+          </div>
           <h2 className="text-2xl font-medium text-[#39302D] mb-2">Processing your data</h2>
           <p className="text-[#39302D] text-lg">{loadingSteps[loadingStep]}</p>
         </div>
