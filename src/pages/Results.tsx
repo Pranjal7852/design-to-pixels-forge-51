@@ -56,7 +56,7 @@ export default function Results() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">Website</h4>
-              <a href="https://www.companyname.com/" className="text-[#39302D] break-all">https://www.ikea.lv/en/products/bodarp-door-grey-green-art-00435535/</a>
+              <a href="https://www.companyname.com/" className="text-[#39302D] break-all">https://www.ikea.lv/</a>
             </div>
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">e-mail</h4>
