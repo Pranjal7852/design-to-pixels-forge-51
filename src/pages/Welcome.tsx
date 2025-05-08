@@ -84,7 +84,7 @@ export default function Welcome() {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12">
+      <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12 pt-32">
         <div className="text-center">
           <CircleFadingPlus className="animate-spin h-16 w-16 text-[#81C784] mx-auto mb-4" />
           <h2 className="text-2xl font-medium text-[#39302D] mb-2">Processing your data</h2>
@@ -95,7 +95,7 @@ export default function Welcome() {
   }
 
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12">
+    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center justify-center px-4 py-12 pt-32">
       <div className="w-full max-w-[800px] flex flex-col items-center">
         <h1 className="text-4xl text-[#81C784] font-normal mb-6">Welcome</h1>
         

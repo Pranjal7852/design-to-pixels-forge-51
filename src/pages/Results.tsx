@@ -1,10 +1,11 @@
+
 import * as React from "react"
 import { Link } from "react-router-dom"
-import { Button } from "@/components/ui/Button"
+import { Button } from "@/components/ui/button"
 
 export default function Results() {
   return (
-    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-8">
+    <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-8 pt-32">
       <div className="w-full max-w-[800px]">
         <div className="text-[#81C784] text-lg font-semibold mb-2 text-left">AUTOCYCLE</div>
         
