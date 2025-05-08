@@ -9,7 +9,7 @@ const brands = [
   },
   {
     name: "Digital Product School",
-    logo: "/lovable-uploads/6f273bba-56ed-4e45-a95d-78d5eabc2611.png"
+    logo: "/lovable-uploads/05d37e78-d49e-4f50-805b-89d20fa29971.png"
   }
 ]
 
