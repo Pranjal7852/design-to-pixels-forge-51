@@ -8,12 +8,14 @@ import {
 import Autoplay from 'embla-carousel-autoplay'
 
 export function InfiniteGrid() {
+  // First row plugin - moving left (default direction)
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: false })
   );
   
+  // Second row plugin - moving right
   const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, direction: "reverse" })
+    Autoplay({ delay: 2000, stopOnInteraction: false })
   );
 
   // Images for the first row
@@ -80,7 +82,11 @@ export function InfiniteGrid() {
       {/* Second row - scrolling right */}
       <div>
         <Carousel
-          opts={{ align: "start", loop: true }}
+          opts={{ 
+            align: "start", 
+            loop: true,
+            direction: "rtl" 
+          }}
           plugins={[pluginReverse.current]}
           className="w-full"
         >
