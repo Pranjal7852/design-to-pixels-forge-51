@@ -13,7 +13,7 @@ export function InfiniteGrid() {
   );
   
   const pluginReverse = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: false, reverse: true })
+    Autoplay({ delay: 2000, stopOnInteraction: false, direction: "rtl" })
   );
 
   // Images for the first row
@@ -66,7 +66,7 @@ export function InfiniteGrid() {
       {/* Second row - scrolling right */}
       <div>
         <Carousel
-          opts={{ align: "start", loop: true }}
+          opts={{ align: "start", loop: true, direction: "rtl" }}
           plugins={[pluginReverse.current]}
           className="w-full"
         >
