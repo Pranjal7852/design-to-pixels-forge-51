@@ -17,7 +17,7 @@ export function Features() {
       <div className="relative w-full max-w-[960px] mt-14">
         {/* Use the uploaded image instead of building the component with individual elements */}
         <img 
-          src="/lovable-uploads/8eaaf284-31cd-4b75-8c77-285971a6433a.png" 
+          src="/lovable-uploads/bcf905a3-38e2-4ab1-b2f0-d2035fbd429e.png" 
           alt="From Waste to Value Process"
           className="w-full h-auto"
         />
