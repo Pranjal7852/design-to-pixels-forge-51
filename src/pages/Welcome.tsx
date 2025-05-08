@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { useNavigate } from "react-router-dom"
 import { useForm } from "react-hook-form"
@@ -8,7 +7,6 @@ import { CircleFadingPlus } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import {
   Select,
   SelectContent,
@@ -28,8 +26,6 @@ const formSchema = z.object({
   companyName: z.string().min(1, { message: "Company name is required" }),
   plasticType: z.string().min(1, { message: "Plastic type is required" }),
   location: z.string().min(1, { message: "Location is required" }),
-  brand: z.string().optional(),
-  productIdea: z.string().optional(),
 })
 
 type FormValues = z.infer<typeof formSchema>
@@ -46,8 +42,6 @@ export default function Welcome() {
       companyName: "",
       plasticType: "",
       location: "",
-      brand: "",
-      productIdea: "",
     },
   })
 
@@ -175,44 +169,6 @@ export default function Welcome() {
                 )}
               />
             </div>
-
-            <FormField
-              control={form.control}
-              name="brand"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-medium text-[#39302D]">
-                    Do you have a Brand in Mind that you would like to cooperate with? (optional)
-                  </FormLabel>
-                  <FormControl>
-                    <Input 
-                      placeholder="LEGO, Adidas, Porsche" 
-                      className="h-14 text-base" 
-                      {...field} 
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
-
-            <FormField
-              control={form.control}
-              name="productIdea"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel className="text-lg font-medium text-[#39302D]">
-                    What kind of product do you imagine for this collaboration? (optional)
-                  </FormLabel>
-                  <FormControl>
-                    <Textarea 
-                      placeholder="Backpack, Nightstand" 
-                      className="min-h-[80px] text-base" 
-                      {...field} 
-                    />
-                  </FormControl>
-                </FormItem>
-              )}
-            />
 
             <div className="flex justify-center pt-4">
               <Button type="submit" className="w-[180px]">Submit</Button>
