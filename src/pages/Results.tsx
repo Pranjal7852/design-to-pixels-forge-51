@@ -75,33 +75,33 @@ export default function Results() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               {
-                title: "Furniture and Home Goods",
-                description: "For living room furniture and home decor",
-                image: "https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true",
-                color: "bg-[#FFC107]/10"
-              },
-              {
-                title: "Building and Construction",
-                description: "Materials for renovation and construction",
-                image: "https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true",
-                color: "bg-[#FF8A65]/10"
-              },
-              {
-                title: "Automotive",
-                description: "For car manufacturing and parts",
-                image: "https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true",
+                title: "BMW × DECATHLON",
+                description: "Hybrid performance on any terrain",
+                image: "/lovable-uploads/1704c551-703b-43df-b26d-1ad14ed14bf7.png",
                 color: "bg-[#2196F3]/10"
               },
               {
-                title: "Packaging",
-                description: "For sustainable packaging solutions",
-                image: "https://cdn.builder.io/api/v1/image/assets/TEMP/0b621f9fc176ff356716acd3b827a9e6a5898ac7?placeholderIfAbsent=true",
-                color: "bg-[#81C784]/10"
+                title: "BMW × VITRA",
+                description: "Performance. Precision. Comfort.",
+                image: "/lovable-uploads/cad28c48-9926-4caf-85b9-824ba6c7bc6a.png",
+                color: "bg-[#FF8A65]/10"
+              },
+              {
+                title: "BMW × LEGO",
+                description: "Upcycled engineering for little engineers",
+                image: "/lovable-uploads/fa0f87d1-5f2e-4fdc-8a42-82c5208e46a7.png",
+                color: "bg-[#FFC107]/10"
+              },
+              {
+                title: "BMW × SAMSONITE",
+                description: "Performance on the road. Protection for travel.",
+                image: "/lovable-uploads/1474e846-0616-4b4a-8383-9d1d3ec29fd7.png",
+                color: "bg-[#607D8B]/10"
               }
             ].map((item, index) => (
               <div key={index} className={`${item.color} p-4 rounded-md flex flex-col`}>
-                <div className="h-24 mb-2 flex items-center justify-center">
-                  <img src={item.image} alt={item.title} className="max-h-full max-w-full" />
+                <div className="h-32 mb-2 flex items-center justify-center overflow-hidden">
+                  <img src={item.image} alt={item.title} className="max-h-full w-full object-contain" />
                 </div>
                 <h4 className="font-medium text-sm mb-1">{item.title}</h4>
                 <p className="text-xs text-gray-600">{item.description}</p>
