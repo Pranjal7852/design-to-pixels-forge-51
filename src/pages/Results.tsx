@@ -60,7 +60,7 @@ export default function Results() {
             </div>
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">e-mail</h4>
-              <p className="text-[#39302D]">companyname@gmail.com</p>
+              <p className="text-[#39302D]">impressum.de@IKEA.com</p>
             </div>
             <div>
               <h4 className="text-[#39302D] text-sm mb-1">Location</h4>
