@@ -15,18 +15,18 @@ const brands = [
 
 export function SupportedBy() {
   return (
-    <div className="w-[940px] max-w-full mt-[60px] mb-[60px] max-md:mt-10">
-      <h2 className="text-[35px] font-normal text-[#39302D] leading-none mb-8">
+    <div className="w-[940px] max-w-full mt-[60px] mb-[60px] max-md:mt-10 text-center">
+      <h2 className="text-[22px] font-light text-[#C8C8C9] mb-8">
         Supported By
       </h2>
       <div className="flex flex-wrap justify-center gap-8 mt-5">
         {brands.map((brand, index) => (
-          <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow bg-white">
+          <Card key={index} className="border-none shadow-md hover:shadow-lg transition-shadow bg-white bg-opacity-90">
             <CardContent className="flex items-center justify-center p-6 h-[150px]">
               <img 
                 src={brand.logo} 
                 alt={brand.name} 
-                className="max-h-full max-w-[200px] object-contain"
+                className="max-h-full max-w-[200px] object-contain opacity-80"
               />
             </CardContent>
           </Card>
