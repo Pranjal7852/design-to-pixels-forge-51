@@ -1,4 +1,3 @@
-
 import * as React from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
@@ -7,8 +6,6 @@ export default function Results() {
   return (
     <div className="min-h-screen bg-[#F8F8F8] flex flex-col items-center px-4 py-8 pt-32">
       <div className="w-full max-w-[800px]">
-        <div className="text-[#81C784] text-lg font-semibold mb-2 text-left">AUTOCYCLE</div>
-        
         <div className="flex justify-between items-center mb-4">
           <h1 className="text-3xl font-bold text-[#39302D]">Stella McCartney</h1>
           <span className="bg-[#E8F5E9] text-[#81C784] px-3 py-1 rounded text-sm">Best Match</span>
