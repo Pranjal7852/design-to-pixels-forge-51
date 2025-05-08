@@ -10,30 +10,32 @@ const features = [
 export function Features() {
   return (
     <div className="flex w-full flex-col items-center mt-[60px] max-md:mt-10">
-      <h2 className="text-[#39302D] text-center text-5xl font-semibold leading-none max-md:max-w-full max-md:text-[40px]">
+      <h2 className="text-[#39302D] text-center text-5xl font-semibold max-md:text-[40px]">
         From Waste to Value
       </h2>
-      <div className="w-full max-w-[960px] mt-7 py-16 relative">
-        <div className="flex justify-between items-center relative z-10 max-md:flex-col max-md:gap-10">
+
+      <div className="relative w-full max-w-[960px] mt-14">
+        <div className="flex justify-between items-center px-4 relative z-10">
           {features.map((feature, index) => (
-            <div key={index} className="w-[33%] text-center text-[22px] font-semibold text-[#39302D] px-2">
+            <div key={index} className="text-center text-[22px] font-semibold text-[#39302D] w-1/3">
               {feature}
             </div>
           ))}
         </div>
 
-        {/* Arrows between items */}
-        <div className="absolute top-[55%] left-1/6 transform -translate-y-1/2 hidden md:block">
-          <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 70 Q 110 10, 210 70" stroke="#6DB86F" strokeWidth="2" fill="none" />
-            <path d="M210 70 L 205 65 M 210 70 L 215 65" stroke="#6DB86F" strokeWidth="2" />
+        {/* Arrow from List Your Requirements to See Matching Results */}
+        <div className="absolute left-[10%] top-[40px] hidden md:block">
+          <svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 10 Q 160 80, 320 10" stroke="#6DB86F" strokeWidth="2" fill="none" />
+            <path d="M320 10 L 315 15 M 320 10 L 325 15" stroke="#6DB86F" strokeWidth="2" />
           </svg>
         </div>
 
-        <div className="absolute top-[55%] left-1/2 transform -translate-y-1/2 hidden md:block">
-          <svg width="220" height="80" viewBox="0 0 220 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 10 Q 110 70, 210 10" stroke="#6DB86F" strokeWidth="2" fill="none" />
-            <path d="M210 10 L 205 15 M 210 10 L 215 15" stroke="#6DB86F" strokeWidth="2" />
+        {/* Arrow from See Matching Results to Connect to the Company */}
+        <div className="absolute left-[42%] top-[-10px] hidden md:block">
+          <svg width="320" height="80" viewBox="0 0 320 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 70 Q 160 0, 320 70" stroke="#6DB86F" strokeWidth="2" fill="none" />
+            <path d="M320 70 L 315 65 M 320 70 L 325 65" stroke="#6DB86F" strokeWidth="2" />
           </svg>
         </div>
       </div>
