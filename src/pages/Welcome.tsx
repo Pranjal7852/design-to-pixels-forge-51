@@ -132,14 +132,14 @@ export default function Welcome() {
                 control={form.control}
                 name="plasticType"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="h-full flex flex-col">
                     <FormLabel className="text-lg font-medium text-[#39302D]">What type of plastic waste do you have?</FormLabel>
                     <Select 
                       onValueChange={field.onChange} 
                       defaultValue={field.value}
                     >
                       <FormControl>
-                        <SelectTrigger className="h-14 text-base border-gray-300">
+                        <SelectTrigger className="h-14 text-base border-gray-300 mt-auto">
                           <SelectValue placeholder="Select plastic type" />
                         </SelectTrigger>
                       </FormControl>
@@ -157,12 +157,12 @@ export default function Welcome() {
                 control={form.control}
                 name="location"
                 render={({ field }) => (
-                  <FormItem>
+                  <FormItem className="h-full flex flex-col">
                     <FormLabel className="text-lg font-medium text-[#39302D]">Where is your plastic located?</FormLabel>
                     <FormControl>
                       <Input 
                         placeholder="City and country (e.g., München, Germany)" 
-                        className="h-14 text-base border-gray-300" 
+                        className="h-14 text-base border-gray-300 mt-auto" 
                         {...field} 
                       />
                     </FormControl>
